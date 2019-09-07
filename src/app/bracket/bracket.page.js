@@ -13,12 +13,15 @@ var canvasMake = {
 };
 lineWidth = 10;
 bracketHeight = 50;
+
+var bracketQueue = [];
 function makeBracket(bracket){
     var x0 = bracket.X-(bracket.W/2);
     fill("#000000");
     rect(x0,bracket.Y,bracket.W,lineWidth);
     rect(x0, bracket.Y+lineWidth,lineWidth,bracketHeight);
     rect(x0+bracket.W-lineWidth, bracket.Y+lineWidth, lineWidth, bracketHeight);
+    bracketQueue.push(bracket);
 }
 
 function make(brackets, rowH, marginW){
