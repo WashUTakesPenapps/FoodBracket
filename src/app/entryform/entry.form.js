@@ -17,6 +17,12 @@ document.getElementById("").addEventListener("submit", function(event) {
             //implement a HashTable maybe? so that you can delete things quickly
             //can pass this array to the bracket js page using session storage-- look on the website
             //details gives 10 photos, search gives 1 photo
+            var restaurantResults = new Set();
+            for (i = 0; i < 8; i++) {
+                restaurantResults.add(resultsArray[i]);
+            }
+
+            localStorage.setItem("results", JSON.stringify(restaurantResults));
 
             // var photoId = resultsArray.photo_reference;
             // var maxWidth = resultsArray.width;
@@ -25,6 +31,7 @@ document.getElementById("").addEventListener("submit", function(event) {
             // var rating = resultsArray.rating;
         } else if (this.status == 404) {
             //handle error
+            
         }
 
         placeSearch.setRequestHeader("Content-Type", "application/json");
