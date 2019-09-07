@@ -79,37 +79,47 @@
 			<h2>Munch Madness</h2>
 			<form action="" method="GET">
 				<div class="row">
-					<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s formList">
+					<div class="wow fadeInLeft delay-05s newCent">
 						<div class="service-list">
-							<div class="service-list-col1">
+							<!-- <div class="service-list-col1">
 								<i class="glyphicon glyphicon-plus"></i>
-							</div>
-							<div class="service-list-col2">
+							</div> -->
+							<div>
 								<h3>Radius (meters)</h3>
 								<input type="number" name="proximity" value="radius"/>
 							</div>
 						</div>
 						<div class="service-list">
-							<div class="service-list-col1">
+							<!-- <div class="service-list-col1">
 								<i class="glyphicon glyphicon-plus"></i>
-							</div>
-							<div class="service-list-col2">
+							</div> -->
+							<div>
 								<h3>Max Price</h3>
-								<input type="number" name="price" value="maxprice"/>
+								<!-- <input type="number" name="price" value="maxprice"/> -->
+								<div> 
+										<select class="select-css" name="prices">
+											<option value="null"></option>
+											<option value="cheap">$</option>
+											<option value="moderate">$$</option>
+											<option value="pricy">$$$</option>
+											<option value="expensive">$$$$</option>
+										</select>
+									</div>
 							</div>
 						</div>
+						
 						<div class="service-list">
-							<div class="service-list-col1">
+							<!-- <div class="service-list-col1">
 								<i class="glyphicon glyphicon-plus"></i>
-							</div>
-							<div class="service-list-col2">
+							</div> -->
+							<div>
 								<h3>More Preferences</h3>
 								<input type="text" name="morePrefs" value=""/>
 							</div>
 						</div>
 						<div class="service-list-col2">
 							<div >
-								<input type="submit" name="submitPrefs" value="Make Bracket"/>
+								<input type="submit" name="submitPrefs" value="Make Bracket" class ="link animated fadeInUp delay-1s"/>
 							</div>
 						</div>
 			</form>
