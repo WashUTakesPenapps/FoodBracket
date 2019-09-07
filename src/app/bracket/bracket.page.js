@@ -102,24 +102,28 @@ function bracketMover(pressCount){
     }
 }
 
+    var storedIds = new Array(8);
+    var storedPlaces = new Array(8);
+    var service;
+
     for (var i = 0; i < 8; i++) {
-        JSON.parse(localStorage.getItem(i));
-        
+        storedIds[i] = localStorage.getItem(i);
     }
-    var storedResults = JSON.parse(localStorage.getItem("results"));
-    // console.log(storedResults);
 
-    // //name, photo, rating, price, radius
 
-    // var photoSearch = new XMLHttpRequest();
-    // photoSearch.open('GET', 'https://maps.googleapis.com/maps/api/place/photo?maxWidth=' + maxWidth + '&photoreference=' + photoId 
-    // + '&key=' + apiKey);
-
-    // if (this.readyState == 4 && this.status == 200) {
-    //     var photo = JSON.parse(this.responseText);
-    // } else if (this.status == 404) {
-    //     // handle error
-    // }
-
-    // photoSearch.setRequestHeader("Content-Type", "application/json");
-    // photoSearch.send();
+    var request = {
+        placeId: storedIds[i],
+        fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity']
+    };
+      
+    service = new google.maps.places.PlacesService(document.createElement('div'));
+    service.getDetails(request, callback);
+      
+    function callback(place, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+          for (var j = 0; j < 8; j++) {
+              storedPlaces[j] = place[j];
+              console.log(storedPlaces[j]);
+          }
+        }
+    }
