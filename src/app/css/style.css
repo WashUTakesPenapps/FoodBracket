@@ -58,12 +58,12 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size:14px;
 	font-weight:normal;
-	color:#888888;
+	color:#166D99;
 	margin:0;
 }
 h2{
 	font-size:34px;
-	color:#222222;
+	color:#166D99;
 	font-family: 'Montserrat', sans-serif;
 	font-weight:700;
 	letter-spacing: -1px;
@@ -73,7 +73,7 @@ h2{
 }
 h3{
 	font-family: 'Montserrat', sans-serif;
-	color:#222222;
+	columns: #06D6A0;
 	font-size:16px;
 	margin:0 0 5px 0;
 	text-transform:uppercase;
@@ -81,7 +81,7 @@ h3{
 }
 h6{
 	font-size:16px;
-	color:#888888;
+	color:#06D6A0;
 	font-family: 'Open Sans', sans-serif;
 	font-weight:400;
 	text-align:center;
@@ -90,6 +90,7 @@ h6{
 p{
 	line-height:24px;
 	margin:0;
+	color: #06D6A0;
 }
 
 /* Header Styles
@@ -97,7 +98,8 @@ p{
 
 .header{
 	text-align:center;
-	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	/* background:url(../img/pw_maze_black_2X.png) left top repeat; */
+	background-color: #F8FFE5;
 	padding:280px 0;
 }
 .logo{
@@ -110,7 +112,7 @@ p{
 	font-weight:400;
 	letter-spacing: -1px;
 	margin:0 0 22px 0 ;
-	color:#fff;
+	color:#FFC43D;
 }
 
 .we-create{
@@ -124,7 +126,7 @@ p{
 	display:inline-block;
 	font-family: 'Montserrat',sans-serif;
 	font-size:14px;
-	color: #bcbcbc;
+	color: #06D6A0;
 	text-transform: uppercase;
 	font-weight: 400;
 	margin:0 5px 0 0;
@@ -145,7 +147,7 @@ color: #fff;
 
 .link{
 	padding:15px 35px;
-	background:#133C55;
+	background:#ef476f;
 	color:#fff !important;
 	font-size:16px;
 	font-weight:400;
@@ -155,18 +157,19 @@ color: #fff;
 	text-transform:uppercase;
 	line-height:25px;
 	margin-bottom:20px;
+	border-color:#F8FFE5;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-webkit-transition:all 0.3s ease-in-out;
 }
 .link:hover {
 	text-decoration:none;
-	color:#133C55 !important;
+	color:#ef476f !important;
 	background:#fff;
 }
 
 .link:active, .link:focus {
-	background: #133C55;
+	background: #ef476f;
 	text-decoration:none;
 	color:#fff !important;
 }
@@ -176,9 +179,9 @@ color: #fff;
 .main-nav-outer{
 	padding:0px;
 	/* border-bottom:1px solid #386fa4; */
-	box-shadow:0 4px 5px -3px #133c55;
+	border-bottom: solid 10px #FFC43D;
 	position:relative;
-	background:#133C55;
+	background:#F8FFE5;
 }
 .main-nav{
 	text-align:center;
@@ -194,7 +197,7 @@ color: #fff;
 .main-nav li a{
 	display:inline-flex;
 	justify-content: space-around;
-	color:#fff;
+	color:#ef476f;
 	text-transform:uppercase;
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
@@ -208,7 +211,7 @@ color: #fff;
 
 .main-nav li a:hover{ 
 	text-decoration:none;
-	color: #133C55;
+	color: #F8FFE5;
 }
 
 .small-logo{ 
@@ -248,8 +251,8 @@ color: #fff;
 }
 #serviceOpen {
 	background:linear-gradient(
-		rgba(255, 255, 255, 0.45), 
-		rgba(255, 255, 255, 0.45)
+		rgba(248, 255, 229, 0.5), 
+		rgba(248, 255, 229, 0.5)
 	  ), url(../img/breakfast-from-above.jpg)  no-repeat;
 	background-size: cover;
 
@@ -313,7 +316,7 @@ color: #fff;
 .Learn-More{
 	display:inline-block;
 	padding:0 5px 0 0;
-	color:#133C55;
+	color:#F8FFE5;
 	font-size:16px;
 	text-transform:uppercase;
 	font-family: 'Montserrat', sans-serif;
@@ -345,24 +348,25 @@ color: #fff;
 .Portfolio-nav li{
 	margin:0 10px;
 	display:inline;
+	color: #ef476f;
 }
 .Portfolio-nav li a{
 	display:inline-block;
 	padding:10px 22px;
 	font-size:12px;
 	line-height:20px;
-	color:#222222;
+	color:#FFC43D;
 	border-radius:4px;
 	text-transform:uppercase;
 	font-family: 'Montserrat', sans-serif;
-	background:#f7f7f7;
+	background:#F8FFE5;
 	margin-bottom:5px;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-webkit-transition:all 0.3s ease-in-out;
 }
-.Portfolio-nav li a:hover{
-	background:#133C55;
+.Portfolio-nav li a:hover {
+	background:#F8FFE5;
 	color:#fff;
 	text-decoration:none;
 }
@@ -392,9 +396,15 @@ color: #fff;
 	opacity: 0.6;
 }
 
+#Reviews {
+	transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+}
+
 .Portfolio-nav li a.current{
-	background:#133C55;
-	color:#fff;
+	background:#F8FFE5;
+	color:#ef476f;
 	text-decoration:none;
 }
 img {
@@ -467,13 +477,13 @@ img {
 	width:68px;
 	height:68px;
 	margin:0 auto;
-	border:2px solid #133C55;
+	border:2px solid #F8FFE5;
 	border-radius:50%;
 	display:block;
 	line-height:68px;
 	text-align:center;
 	font-size:27px;
-	color:#133C55;
+	color:#F8FFE5;
 	cursor: pointer;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
@@ -486,7 +496,7 @@ border: 2px solid #fff;
 }
 
 .c-logo-part{
-	background:#133C55;
+	background:#F8FFE5;
 	padding:25px 0;
     filter: alpha(opacity=60);
 }
@@ -725,7 +735,7 @@ border: 2px solid #fff;
 	-webkit-transition:all 0.3s ease-in-out;
 }
 .input-text:focus {
-	border: 1px solid #133C55;
+	border: 1px solid #F8FFE5;
 	outline:0;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);
 	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);	
@@ -740,7 +750,7 @@ border: 2px solid #fff;
 .input-btn{
 	width:175px;
 	height:50px;
-	background:#133C55;
+	background:#F8FFE5;
 	border-radius:4px;
 	color:#ffffff;
 	font-size:14px;
@@ -767,8 +777,8 @@ border: 2px solid #fff;
 }
 
 #sendmessage {
-    color: #133C55;
-    border:1px solid #133C55;
+    color: #F8FFE5;
+    border:1px solid #F8FFE5;
     display:none;
     text-align:center;
     padding:15px;
@@ -794,7 +804,7 @@ border: 2px solid #fff;
 ---------------------------------*/
 
 .footer{
-	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	background-color: #FFC43D;
 	padding:35px 0 35px;
 }
 .footer-logo{
@@ -802,13 +812,13 @@ border: 2px solid #fff;
 	width: 76px;
 }
 .copyright, .credits{
-	color:#cccccc;
+	color:#F8FFE5;
 	font-size:14px;
 	display:block;
 	text-align:center;
 }
 .copyright a, .credits a{
-	color:#133C55;
+	columns: #06D6A0;;
 	font-weight:600;
 	text-decoration: none;
 	transition:all 0.3s ease-in-out;
@@ -837,7 +847,7 @@ border: 2px solid #fff;
 }
 
 .res-nav_click:hover, .res-nav_click:active, .res-nav_click:focus {
-	color: #133C55 !important;
+	color: #F8FFE5 !important;
 }
 
 .portfolioContainer{
