@@ -178,7 +178,7 @@ color: #fff;
 	border-bottom:1px solid #dddddd;
 	box-shadow:0 4px 5px -3px #ececec;
 	position:relative;
-	background:#fff;
+	background:#133C55;
 }
 .main-nav{
 	text-align:center;
@@ -187,13 +187,16 @@ color: #fff;
 	list-style:none;
 }
 .main-nav li{
-	display:inline;
+	display:inline-flex;
+	justify-content: space-around;
 	margin:0 1px;
 }
 .main-nav li a{
-	display:inline-block;
-	color:#222222;
+	display:inline-flex;
+	justify-content: space-around;
+	color:#fff;
 	text-transform:uppercase;
+	text-align: center;
 	font-family: 'Montserrat', sans-serif;
 	text-decoration: none;
 	line-height:20px;
@@ -213,7 +216,7 @@ color: #fff;
 }
 
 .main-section{
-	padding:90px 0 110px;
+	padding:90px 0 10px;
 }
 
 
@@ -403,7 +406,7 @@ img {
 }
 
 .main-section.paddind{
-	padding-bottom:60px;
+	padding-bottom:30px;
 }
 
 /* Clients
@@ -898,6 +901,10 @@ border: 2px solid #fff;
     margin: 0em;
     font: 400 11px system-ui;
     padding: 5px;
+}
 
-	
+.oneLine {
+	float: left;
+	padding-right: 5px;
+	text-align: center;
 }
