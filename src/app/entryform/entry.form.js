@@ -15,32 +15,20 @@ document.getElementById("").addEventListener("submit", function(event) {
         if (this.readyState == 4 && this.status == 200) {
             var resultsArray = JSON.parse(this.responseText); //this is an array though-- so these variables must be changed
             //implement a HashTable maybe? so that you can delete things quickly
+            //can pass this array to the bracket js page using session storage-- look on the website
+            //details gives 10 photos, search gives 1 photo
 
-            var photoId = resultsArray.photo_reference;
-            var maxWidth = resultsArray.width;
-            var restaurantName = resultsArray.name;
-            var placeId = resultsArray.placeId;
-            var rating = resultsArray.rating;
+            // var photoId = resultsArray.photo_reference;
+            // var maxWidth = resultsArray.width;
+            // var restaurantName = resultsArray.name;
+            // var placeId = resultsArray.placeId;
+            // var rating = resultsArray.rating;
         } else if (this.status == 404) {
             //handle error
         }
 
         placeSearch.setRequestHeader("Content-Type", "application/json");
         placeSearch.send();
-
     }
-
-    var photoSearch = new XMLHttpRequest();
-    photoSearch.open('GET', 'https://maps.googleapis.com/maps/api/place/photo?maxWidth=' + maxWidth + '&photoreference=' + photoId 
-    + '&key=' + apiKey);
-
-    if (this.readyState == 4 && this.status == 200) {
-        var photo = JSON.parse(this.responseText);
-    } else if (this.status == 404) {
-        // handle error
-    }
-
-    photoSearch.setRequestHeader("Content-Type", "application/json");
-    photoSearch.send();
 
 })
