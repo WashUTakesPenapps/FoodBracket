@@ -28,6 +28,7 @@ window.onload = function() {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 for (var i = 0; i < 8; i++) {
                     restaurantResults[i] = results[i].place_id;
+                    console.log(restaurantResults[i]);
                     localStorage.setItem(i, restaurantResults[i]);
                 }
             }
