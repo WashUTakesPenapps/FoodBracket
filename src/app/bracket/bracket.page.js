@@ -102,28 +102,34 @@ function bracketMover(pressCount){
     }
 }
 
+window.onload = function() {
     var storedIds = new Array(8);
     var storedPlaces = new Array(8);
     var service;
 
-    for (var i = 0; i < 8; i++) {
-        storedIds[i] = localStorage.getItem(i);
+    for (var j = 0; j < 8; j++) {
+        storedIds[j] = localStorage.getItem(j);
+        console.log(storedIds[j]);
     }
-
 
     var request = {
-        placeId: storedIds[i],
+        placeId: storedIds[0],
         fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity']
     };
-      
+
+    console.log(request);
+    
     service = new google.maps.places.PlacesService(document.createElement('div'));
     service.getDetails(request, callback);
-      
+
     function callback(place, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-          for (var j = 0; j < 8; j++) {
-              storedPlaces[j] = place[j];
-              console.log(storedPlaces[j]);
-          }
+            for (var j = 0; j < 8; j++) {
+                storedIds[j] = place;
+                console.log(storedIds[j]);
+            }
         }
     }
+    console.log(storedIds);
+
+}
