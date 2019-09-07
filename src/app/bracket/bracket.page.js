@@ -152,6 +152,7 @@ let boxSketch = function(p){
         clear();
     }
 }
+<<<<<<< HEAD
 let sketch2 = new p5(boxSketch);
     // var storedResults = JSON.parse(localStorage.getItem("results"));
     // console.log(storedResults);
@@ -161,12 +162,37 @@ let sketch2 = new p5(boxSketch);
     // var photoSearch = new XMLHttpRequest();
     // photoSearch.open('GET', 'https://maps.googleapis.com/maps/api/place/photo?maxWidth=' + maxWidth + '&photoreference=' + photoId 
     // + '&key=' + apiKey);
+=======
 
-    // if (this.readyState == 4 && this.status == 200) {
-    //     var photo = JSON.parse(this.responseText);
-    // } else if (this.status == 404) {
-    //     // handle error
-    // }
+window.onload = function() {
+    var storedIds = new Array(8);
+    var storedPlaces = new Array(8);
+    var service;
 
-    // photoSearch.setRequestHeader("Content-Type", "application/json");
-    // photoSearch.send();
+    for (var j = 0; j < 8; j++) {
+        storedIds[j] = localStorage.getItem(j);
+        console.log(storedIds[j]);
+    }
+
+    var request = {
+        placeId: storedIds[0],
+        fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity']
+    };
+
+    console.log(request);
+    
+    service = new google.maps.places.PlacesService(document.createElement('div'));
+    service.getDetails(request, callback);
+>>>>>>> 04935aa843fc094514a88fa81c21bf4a1b552270
+
+    function callback(place, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var j = 0; j < 8; j++) {
+                storedIds[j] = place;
+                console.log(storedIds[j]);
+            }
+        }
+    }
+    console.log(storedIds);
+
+}
