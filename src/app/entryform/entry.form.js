@@ -2,46 +2,33 @@ window.onload = function() {
     document.getElementById("makeBracket").addEventListener("submit", function(event) {
         event.preventDefault();
 
-        var placeSearch = new XMLHttpRequest();
-        var apiKey = "AIzaSyDVLzXVT1vBPMgHF-x3MOXQlMJiVlryDj8";
+        var restaurantResults = new Array(8);
+
+        // var apiKey = "AIzaSyDVLzXVT1vBPMgHF-x3MOXQlMJiVlryDj8";
         var queryString = queryId.value; //should sanitize later
         var maxPrice = maxId.value; //0 to 4
-        var radius = radiusId.value; //0 to 50,000 m
+        var radiusString = radiusId.value; //0 to 50,000 m
 
-        placeSearch.open('GET', 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=' + queryString + '&maxprice=' 
-            + maxPrice + '&opennow=true&radius=' + radius + '&key=' + apiKey);
-        console.log('https://maps.googleapis.com/maps/api/place/textsearch/json?query=' + queryString + '&maxprice=' 
-        + maxPrice + '&opennow=true&radius=' + radius + '&key=' + apiKey);
+        var service;
 
-        placeSearch.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                var resultsArray = placeSearch.responseText.split(',');
-                //details gives 10 photos, search gives 1 photo
-
-                console.log(resultsArray);
-                // var restaurantResults = new Set();
-                // for (i = 0; i < 8; i++) {
-                //     restaurantResults.add(resultsArray[i]);
-                // }
-
-                // localStorage.setItem("results", JSON.stringify(restaurantResults));
-
-                // var photoId = resultsArray.photo_reference;
-                // var maxWidth = resultsArray.width;
-                // var restaurantName = resultsArray.name;
-                // var placeId = resultsArray.placeId;
-                // var rating = resultsArray.rating;
-            } else if (this.status === 404) {
-                //handle error
-                console.log('error');
-            }
-
-
+        var request = {
+                    // radius: radiusString,
+            query: queryString,
+            minPriceLevel: 0,
+            maxPriceLevel: maxPrice
         };
 
-        placeSearch.setRequestHeader("Content-Type", "application/json");
-        placeSearch.send();
+        service = new google.maps.places.PlacesService(document.createElement('div'));
+        service.textSearch(request, callback);
 
+        function callback(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < 8; i++) {
+                    restaurantResults[i] = results[i].place_id;
+                    console.log(restaurantResults[i]);
+                    localStorage.setItem(i, restaurantResults[i]);
+                }
+            }
+        }
     });
-
 };
