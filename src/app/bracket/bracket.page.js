@@ -10,24 +10,29 @@ var canvasMargin = {
 var canvasMake = {
     W: windowDim.W,
     H: windowDim.H
-};
-lineWidth = 10;
-bracketHeight = 50;
-
+}; 
+lineWidth = windowDim.W/150;
+bracketHeight = windowDim.H/8;
 var bracketQueue = [];
 function makeBracket(bracket){
-    var x0 = bracket.X-(bracket.W/2);
+    var x0 = bracket.X;
     fill("#000000");
     rect(x0,bracket.Y,bracket.W,lineWidth);
     rect(x0, bracket.Y+lineWidth,lineWidth,bracketHeight);
-    rect(x0+bracket.W-lineWidth, bracket.Y+lineWidth, lineWidth, bracketHeight);
+    rect(x0+bracket.W, bracket.Y, lineWidth, bracketHeight+lineWidth);
     bracketQueue.push(bracket);
 }
 
-function make(brackets, rowH, marginW){
-    var width = (canvasMake.W - 2*marginW)/(brackets-1);
-    var x = marginW + width/2;
-    for(var i = 0; i < brackets; i++){
+function make(brackets, rowH, width){
+    var x = width/2;
+    if(brackets == 1){
+        rect(x, rowH, lineWidth, bracketHeight);
+        return;
+    }
+    else{
+        make(brackets/2,rowH-bracketHeight, width*2);
+    }
+    for(var i = 0; i < brackets/2; i++){
         var newBracket = {
             X: x,
             Y: rowH,
@@ -36,20 +41,65 @@ function make(brackets, rowH, marginW){
         makeBracket(newBracket);
         x += width*2;
     }
-    if(brackets == 1){
-        rect(x, rowH, lineWidth, bracketHeight);
-        return;
-    }
-    else{
-        make(brackets/2,rowH-bracketHeight,marginW+width/2-lineWidth/4);
-    }
 }
 
+var scaleVal = 1;
+var y = windowDim.H/2;
+var w = windowDim.W/9;
+var tX = w/2;
+var tY = 0;
 function setup(){
     createCanvas(windowDim.W, windowDim.H);
+    bracketNum = 0;
 }
+var scaleFactor = 2.7;
 function draw(){
-   make(16, 400, 100);
+    background("rgb(255,255,255)");
+    scale(scaleVal);
+    translate(tX, tY);
+    make(8, y, w);
+}
+var pressCount = 0;
+var brackets = 8;
+function mousePressed(){
+    redraw();
+    background("#FFFFFF");
+    bracketMover(pressCount);
+    pressCount++;
+}
+function bracketMover(pressCount){
+    if(pressCount == 0){
+        scaleVal = scaleVal*scaleFactor;
+        y = y/scaleVal;
+    }
+    else if(pressCount >= 1 && pressCount < brackets/2){
+        tX -=w*2;
+    }
+    else if(pressCount == brackets/2){
+        tX = w/2;
+        tY = 0;
+        scaleVal = 1;
+        y = windowDim.H/2;
+    }
+    else if(pressCount == brackets/2+1){
+        scaleVal = scaleVal*2;
+        tX = w/4;
+        y = y/scaleVal;
+        
+    }
+    else if(pressCount == brackets/2+2){
+        tX -=w*4;
+    }
+    else if(pressCount == brackets/2+3){
+        tX = w/2;
+        tY = 0;
+        scaleVal = 1;
+        y = windowDim.H/2;
+    }
+    else if(pressCount == brackets/2+4){
+        tY += bracketHeight;
+
+    }
 }
 
     var storedResults = JSON.parse(localStorage.getItem("results"));
