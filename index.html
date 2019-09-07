@@ -11,6 +11,7 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<link href="src/app/css/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="src/app/css/style.css" rel="stylesheet" type="text/css">
@@ -46,13 +47,13 @@
 		<!--header-start-->
 		<div class="container">
 			<figure class="logo animated fadeInDown delay-07s">
-				<a href="#"><img src="img/IMG_1160.jpeg" alt=""></a>
+				<a href="#"><img src="src/app/img/IMG_1160.jpeg" alt=""></a>
 			</figure>
 			<h1 class="animated fadeInDown delay-07s">Welcome To Munch Madness</h1>
 			<ul class="we-create animated fadeInUp delay-1s">
 				<li>Taking the stress out of deciding where to eat</li>
 			</ul>
-			<a class="link animated fadeInUp delay-1s servicelink" href="#service">Let's Eat</a>
+			<a class="link animated fadeInUp delay-1s servicelink" href="#serviceOpen">Let's Eat</a>
 		</div>
 	</header>
 	<!--header-end-->
@@ -63,11 +64,7 @@
 			<ul class="main-nav">
 				<li><a href="#header">Home</a></li>
 				<li><a href="#service">Form</a></li>
-				<!-- <li><a href="#Portfolio">Portfolio</a></li> -->
-				<li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
-				<!-- <li><a href="#client">Clients</a></li>
-				<li><a href="#team">Team</a></li>
-				<li><a href="#contact">Contact</a></li> -->
+
 			</ul>
 			<a class="res-nav_click" href="#"><i class="fa fa-bars"></i></a>
 		</div>
@@ -76,7 +73,7 @@
 
 
 
-	<section class="main-section" id="service">
+	<section class="main-section" id="serviceOpen">
 		<!--main-section-start-->
 		<div class="container">
 			<h2>Munch Madness</h2>
@@ -89,7 +86,7 @@
 							</div> -->
 							<div>
 								<h3>Radius (meters)</h3>
-								<input id="radiusId" type="number" name="proximity"/>
+								<input min="0" max="50000" id="radiusId" type="number" name="proximity"/>
 							</div>
 						</div>
 						<div class="service-list">
@@ -116,7 +113,7 @@
 								<i class="glyphicon glyphicon-plus"></i>
 							</div> -->
 							<div>
-								<h3>More Preferences</h3>
+								<h3>Type of Cuisine</h3>
 								<input id="queryId" type="text" name="morePrefs" value=""/>
 							</div>
 						</div>
@@ -128,19 +125,12 @@
 			</form>
 			
 				</div>
-				<figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
-					<img src="img/macbook-pro.png" alt="">
-				</figure>
 
 			</div>
 		</div>
 	</section>
 	<!--main-section-end-->
 
-
-	<section class="main-section client-part" id="client">
-
-	</section>
 	<!--main-section client-part-end-->
 	<div class="c-logo-part">
 		<!--c-logo-part-start-->

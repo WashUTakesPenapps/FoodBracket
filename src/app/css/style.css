@@ -175,8 +175,8 @@ color: #fff;
 ---------------------------------*/
 .main-nav-outer{
 	padding:0px;
-	border-bottom:1px solid #dddddd;
-	box-shadow:0 4px 5px -3px #ececec;
+	/* border-bottom:1px solid #386fa4; */
+	box-shadow:0 4px 5px -3px #133c55;
 	position:relative;
 	background:#133C55;
 }
@@ -246,6 +246,17 @@ color: #fff;
 .service-list-col2{
 	overflow:hidden;	
 }
+#serviceOpen {
+	background:linear-gradient(
+		rgba(255, 255, 255, 0.45), 
+		rgba(255, 255, 255, 0.45)
+	  ), url(../img/breakfast-from-above.jpg)  no-repeat;
+	background-size: cover;
+
+}
+
+
+
 
 .newCent{
 	text-align: center;
