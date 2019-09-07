@@ -97,7 +97,7 @@ p{
 
 .header{
 	text-align:center;
-	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	background:url(../img/pw_maze_black.png) left top repeat;
 	padding:280px 0;
 }
 .logo{
@@ -224,6 +224,9 @@ color: #fff;
 	padding:0 0 0 0;
 	font-size:14px;
 	margin-bottom:40px;
+	margin-right: auto;
+	margin-left: auto;
+
 }
 .service-list-col1{
 	float:left;
@@ -240,6 +243,8 @@ color: #fff;
 .service-list-col2{
 	overflow:hidden;	
 }
+
+
 .main-section.alabaster{
 	background:#fafafa;
 }
