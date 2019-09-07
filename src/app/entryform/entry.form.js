@@ -1,10 +1,13 @@
+	// apiKey = "AIzaSyDVLzXVT1vBPMgHF-x3MOXQlMJiVlryDj8"
+
+
+
 window.onload = function() {
     document.getElementById("makeBracket").addEventListener("submit", function(event) {
         event.preventDefault();
 
         var restaurantResults = new Array(8);
 
-        // var apiKey = "AIzaSyDVLzXVT1vBPMgHF-x3MOXQlMJiVlryDj8";
         var queryString = queryId.value; //should sanitize later
         var maxPrice = maxId.value; //0 to 4
         var radiusString = radiusId.value; //0 to 50,000 m
@@ -12,7 +15,7 @@ window.onload = function() {
         var service;
 
         var request = {
-                    // radius: radiusString,
+            // radius: radiusString,
             query: queryString,
             minPriceLevel: 0,
             maxPriceLevel: maxPrice
