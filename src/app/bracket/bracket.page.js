@@ -104,6 +104,7 @@ function bracketMover(pressCount){
 
     for (var i = 0; i < 8; i++) {
         JSON.parse(localStorage.getItem(i));
+        
     }
     var storedResults = JSON.parse(localStorage.getItem("results"));
     // console.log(storedResults);
