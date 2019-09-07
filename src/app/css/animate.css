@@ -1148,9 +1148,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   100% {
     opacity: 1;
-    -webkit-transform: translateX(1000px);
-    -ms-transform: translateX(1000px);
-    transform: translateX(1000px);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
