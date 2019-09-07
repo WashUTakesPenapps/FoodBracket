@@ -1,3 +1,6 @@
+console.log(document.getElementById("makeBracket"));
+
+
 document.getElementById("makeBracket").addEventListener("submit", function(event) {
     event.preventDefault();
 
