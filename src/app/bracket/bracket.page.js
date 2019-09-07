@@ -14,9 +14,6 @@ var canvasMake = {
 lineWidth = windowDim.W/150;
 bracketHeight = windowDim.H/8;
 var bracketQueue = [];
-
-
-
 var scaleVal = 1;
 var y = windowDim.H/2;
 var w = windowDim.W/9;
@@ -98,7 +95,6 @@ let bracketSketch = function(p){
         }
         else if(pressCount == brackets/2+4){
             tY += bracketHeight;
-    
         }
         else{
             tX = w/2;
@@ -128,10 +124,15 @@ let boxSketch = function(p){
         W: windowDim.W/2 - boxMargin.left - boxMargin.right
     }
     function leftBox(){
+        var leftTextX = boxMargin.left + boxPadding.left;
+        var leftTextY = windowDim.H/2;
         p.rect(boxMargin.left, boxMargin.top, boxDim.H, boxDim.W);
         p.textSize(30);
-        p.text("Name Goes Here", boxMargin.left + boxPadding.left, windowDim.H/2)
-        p.text("4.5")
+        p.text("Name Goes Here", leftTextX, leftTextY);
+        p.textSize(20);
+        p.text("4.5", leftTextX, leftTextY+30);
+        p.textSize(15);
+        p.text("555 Five Street FiveTown, NY 55555 ", leftTextX, leftTextY+45);
     }
     function rightBox(){
         p.rect(windowDim.W - boxDim.W + boxMargin.left + boxMargin.right, boxMargin.top, boxDim.H, boxDim.W);
@@ -149,10 +150,9 @@ let boxSketch = function(p){
         leftBox();
         rightBox();
         vsDraw();
-        clear();
+        p.clear();
     }
 }
-<<<<<<< HEAD
 let sketch2 = new p5(boxSketch);
     // var storedResults = JSON.parse(localStorage.getItem("results"));
     // console.log(storedResults);
@@ -162,7 +162,6 @@ let sketch2 = new p5(boxSketch);
     // var photoSearch = new XMLHttpRequest();
     // photoSearch.open('GET', 'https://maps.googleapis.com/maps/api/place/photo?maxWidth=' + maxWidth + '&photoreference=' + photoId 
     // + '&key=' + apiKey);
-=======
 
 window.onload = function() {
     var storedIds = new Array(8);
@@ -183,7 +182,6 @@ window.onload = function() {
     
     service = new google.maps.places.PlacesService(document.createElement('div'));
     service.getDetails(request, callback);
->>>>>>> 04935aa843fc094514a88fa81c21bf4a1b552270
 
     function callback(place, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
