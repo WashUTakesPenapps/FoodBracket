@@ -124,10 +124,6 @@ window.onload = function() {
             }
         }
     }
-
-    console.log(storedPlaces);
-    
-
     // var temp = google.maps.places.PlacePhoto.getUrl(storedPlaces[0]);
 
 }
