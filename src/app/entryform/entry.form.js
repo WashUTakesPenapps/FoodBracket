@@ -12,7 +12,7 @@ window.onload = function() {
         var service;
 
         var request = {
-                    // radius: radiusString,
+            // radius: radiusString,
             query: queryString,
             minPriceLevel: 0,
             maxPriceLevel: maxPrice
