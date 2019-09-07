@@ -77,7 +77,7 @@
 		<!--main-section-start-->
 		<div class="container">
 			<h2>Munch Madness</h2>
-			<form action="" method="GET">
+			<form id="makeBracket">
 				<div class="row">
 					<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s formList">
 						<div class="service-list">
@@ -86,7 +86,7 @@
 							</div>
 							<div class="service-list-col2">
 								<h3>Radius (meters)</h3>
-								<input type="number" name="proximity" value="radius"/>
+								<input id="radiusId" type="number" name="proximity"/>
 							</div>
 						</div>
 						<div class="service-list">
@@ -95,7 +95,7 @@
 							</div>
 							<div class="service-list-col2">
 								<h3>Max Price</h3>
-								<input type="number" name="price" value="maxprice"/>
+								<input id="maxId" type="number" name="price" />
 							</div>
 						</div>
 						<div class="service-list">
@@ -104,7 +104,7 @@
 							</div>
 							<div class="service-list-col2">
 								<h3>More Preferences</h3>
-								<input type="text" name="morePrefs" value=""/>
+								<input id="queryString" type="text" name="morePrefs" value=""/>
 							</div>
 						</div>
 						<div class="service-list-col2">
@@ -179,6 +179,7 @@
 		</div>
 	</footer>
 
+	<script src="/src/app/entryform/entry.form.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function(e) {
@@ -274,7 +275,6 @@
 
 		});
 	</script>
-
 </body>
 
 </html>

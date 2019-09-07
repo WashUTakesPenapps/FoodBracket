@@ -2,6 +2,7 @@
     var storedResults = JSON.parse(localStorage.getItem("results"));
     console.log(storedResults);
 
+    //name, photo, rating, price, radius
 
     var photoSearch = new XMLHttpRequest();
     photoSearch.open('GET', 'https://maps.googleapis.com/maps/api/place/photo?maxWidth=' + maxWidth + '&photoreference=' + photoId 
