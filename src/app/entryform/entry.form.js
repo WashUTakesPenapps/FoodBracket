@@ -11,6 +11,7 @@ document.getElementById("").addEventListener("submit", function(event) {
     placeSearch.open('GET', 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=' + queryString + '&maxprice=' 
         + maxPrice + '&opennow=true&radius=' + radius + '&key=' + apiKey);
 
+
     placeSearch.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var resultsArray = JSON.parse(this.responseText); //this is an array though-- so these variables must be changed
@@ -31,7 +32,7 @@ document.getElementById("").addEventListener("submit", function(event) {
             // var rating = resultsArray.rating;
         } else if (this.status == 404) {
             //handle error
-            
+        
         }
 
         placeSearch.setRequestHeader("Content-Type", "application/json");
