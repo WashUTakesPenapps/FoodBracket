@@ -929,3 +929,7 @@ border: 2px solid #fff;
 	padding-right: 5px;
 	text-align: center;
 }
+
+.bracket {
+	background-color: #F8FFE5;
+}

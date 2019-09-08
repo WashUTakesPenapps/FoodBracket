@@ -54,7 +54,7 @@ function setup(){
 }
 var scaleFactor = 2.7;
 function draw(){
-    background("rgb(255,255,255)");
+    background("rgb(248,255,229)");
     scale(scaleVal);
     translate(tX, tY);
     make(8, y, w);
