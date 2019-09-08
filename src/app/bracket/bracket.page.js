@@ -1,7 +1,10 @@
+var storedPlaces = new Array(8);
+
+
 window.onload = function() {
     var storedIds = new Array(8);
-    var storedPlaces = new Array(0);
     var service;
+    var i = 0;
 
     for (var j = 0; j < 8; j++) {
         storedIds[j] = localStorage.getItem(j);
@@ -10,19 +13,34 @@ window.onload = function() {
             placeId: storedIds[j],
             fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity']
         };
-        this.console.log(request);
             
         service = new google.maps.places.PlacesService(document.createElement('div'));
-        service.getDetails(request, callback);
-     
-        function callback(place, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-                storedPlaces[j] = place;
-            }
-        }
+        service.getDetails(request,callback);
     }
-    // var temp = google.maps.places.PlacePhoto.getUrl(storedPlaces[0]);
+
+    console.log(storedPlaces[0].name);
+
+    function callback(place, status) {
+        console.log("in callback function");
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            storedPlaces[i] = place;
+            console.log(storedPlaces[i]);
+            i += 1;
+        }
+        jerome();
+    }
+
+    console.log("Callback is done");
+
+    console.log("Outside of start function");
+
 }
+
+function jerome() {
+    console.log(storedPlaces[0].name);
+    return storedPlaces[0].name;
+}
+
 var windowDim = {
     W: window.innerWidth,
     H: window.innerHeight,
