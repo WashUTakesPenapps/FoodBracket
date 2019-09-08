@@ -104,26 +104,31 @@ function bracketMover(pressCount){
 
 window.onload = function() {
     var storedIds = new Array(8);
-    var storedPlaces = new Array(0);
-    var service;
+    var storedPlaces = new Array();
+    var service = null;
+    var i = 0;
 
     for (var j = 0; j < 8; j++) {
         storedIds[j] = localStorage.getItem(j);
+        console.log(storedIds[j]);
 
         var request = {
             placeId: storedIds[j],
-            fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity']
+            fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity', 'photos']
         };
-            
+
         service = new google.maps.places.PlacesService(document.createElement('div'));
         service.getDetails(request, callback);
-    
+
         function callback(place, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-                storedPlaces.push(place);
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                storedPlaces[i] = place;
+                
+                console.log(storedPlaces[i]);
+                i += 1;
             }
         }
     }
-    // var temp = google.maps.places.PlacePhoto.getUrl(storedPlaces[0]);
 
+    console.log(storedPlaces[i-1]);
 }
