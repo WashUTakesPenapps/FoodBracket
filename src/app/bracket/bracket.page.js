@@ -1,23 +1,21 @@
+var storedPlaces = new Array(0);
 window.onload = function() {
     var storedIds = new Array(8);
-    var storedPlaces = new Array(0);
     var service;
-
     for (var j = 0; j < 8; j++) {
         storedIds[j] = localStorage.getItem(j);
 
         var request = {
             placeId: storedIds[j],
             fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity']
-        };
-        this.console.log(request);
-            
+        };  
         service = new google.maps.places.PlacesService(document.createElement('div'));
         service.getDetails(request, callback);
      
         function callback(place, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
-                storedPlaces.push(place);
+                storedPlaces[j] = place;
+                console.log(storedPlaces);
             }
         }
     }
@@ -160,56 +158,6 @@ let bracketSketch = function(p){
     }
 }
 let sketch1 = new p5(bracketSketch);
-let boxSketch = function(p){
-    var boxMargin = {
-        top: 50,
-        left: 50,
-        right: 50,
-        bottom: 50
-    }
-    var boxPadding = {
-        top: 50,
-        left: 50,
-        right: 50,
-        bottom: 50
-    }
-    var boxDim = {
-        H: windowDim.H*0.8 - boxMargin.top - boxMargin.bottom,
-        W: windowDim.W/2 - boxMargin.left - boxMargin.right
-    }
-    function leftBox(){
-        var leftTextX = boxMargin.left + boxPadding.left;
-        var leftTextY = windowDim.H/2;
-        p.rect(boxMargin.left, boxMargin.top, boxDim.H, boxDim.W);
-        p.textSize(30);
-        p.text("Name Place", leftTextX, leftTextY);
-        p.textSize(20);
-        p.text("4.5 Stars – " + priceConverter(3), leftTextX, leftTextY+30);
-        p.textSize(15);
-        p.text("555 Five Street FiveTown, NY 55555 ", leftTextX, leftTextY+50);
-        p.text("Hours: 11AM-10PM", leftTextX, leftTextY+75);
-
-    }
-    function rightBox(){
-        p.rect(windowDim.W - boxDim.W + boxMargin.left + boxMargin.right, boxMargin.top, boxDim.H, boxDim.W);
-    }
-    function vsDraw(){
-        var tSize = 60;
-        p.textSize(tSize);
-        p.text("VS", windowDim.W/2-tSize/2, windowDim.H/2);
-        p.fill("#000000");
-    }
-    p.setup = function(){
-        p.createCanvas(windowDim.W, windowDim.H);
-    }
-    p.draw = function(){
-        leftBox();
-        rightBox();
-        vsDraw();
-        clear();
-    }
-}
-let sketch2 = new p5(boxSketch);
 function priceConverter(price){
     if(price === 0){
         return "FREE";
