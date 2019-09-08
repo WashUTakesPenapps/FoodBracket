@@ -15,10 +15,8 @@ window.onload = function() {
         };
             
         service = new google.maps.places.PlacesService(document.createElement('div'));
-        service.getDetails(request,callback);
+        service.getDetails(request, callback);
     }
-
-    console.log(storedPlaces[0].name);
 
     function callback(place, status) {
         console.log("in callback function");
@@ -26,9 +24,6 @@ window.onload = function() {
             console.log(place);
         }
     }
-    console.log("Callback is done");
-
-    console.log("Outside of start function");
 }
 
 var windowDim = {
