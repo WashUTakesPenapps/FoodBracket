@@ -23,22 +23,12 @@ window.onload = function() {
     function callback(place, status) {
         console.log("in callback function");
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-            storedPlaces[i] = place;
-            console.log(storedPlaces[i]);
-            i += 1;
+            console.log(place);
         }
-        jerome();
     }
-
     console.log("Callback is done");
 
     console.log("Outside of start function");
-
-}
-
-function jerome() {
-    console.log(storedPlaces[0].name);
-    return storedPlaces[0].name;
 }
 
 var windowDim = {
