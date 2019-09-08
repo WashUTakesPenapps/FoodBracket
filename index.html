@@ -6,9 +6,6 @@
 	<meta name="viewport" content="width=device-width, maximum-scale=1">
 
 	<title>Homepage</title>
-	<link rel="icon" href="favicon.png" type="image/png">
-	<link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
-
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,7 +16,7 @@
 	<link href="src/app/css/responsive.css" rel="stylesheet" type="text/css">
 	<link href="src/app/css/magnific-popup.css" rel="stylesheet" type="text/css">
 	<link href="src/app/css/animate.css" rel="stylesheet" type="text/css">
-	<link href="app/entryform/entry.form.css" rel="stylesheet" type="text/css">
+	<link href="src/app/entryform/entry.form.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="src/app/entryform/entry.form.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVLzXVT1vBPMgHF-x3MOXQlMJiVlryDj8&libraries=places"></script>
 
@@ -31,7 +28,6 @@
 	<script type="text/javascript" src="src/app/js/wow.js"></script>
 	<script type="text/javascript" src="src/app/js/classie.js"></script>
 	<script type="text/javascript" src="src/app/js/magnific-popup.js"></script>
-	<script src="src/app/contactform/contactform.js"></script>
 
 	<!-- =======================================================
     Theme Name: Knight
@@ -77,7 +73,7 @@
 		<!--main-section-start-->
 		<div class="container">
 			<h2>Munch Madness</h2>
-			<form id="makeBracket" method="GET" action="">
+			<form id="makeBracket" method="GET" action="/src/app/bracket/bracket.page.html">
 				<div class="row">
 					<div class="wow fadeInLeft delay-05s newCent">
 						<div class="service-list">
@@ -120,7 +116,7 @@
 						<div class="service-list-col2">
 							<div >
 								<!-- <input type="hidden" name="redirect" value="/src/app/bracket/bracket.page.html" > -->
-								<input type="submit" name="submitPrefs" value="Make Bracket" class ="link animated fadeInUp delay-1s"/>
+								<input onclick="navToNext()" type="submit" name="submitPrefs" value="Make Bracket" class ="link animated fadeInUp delay-1s"/>
 							</div>
 						</div>
 			</form>
@@ -132,20 +128,6 @@
 	</section>
 	<!--main-section-end-->
 
-	<!--main-section client-part-end-->
-	<div class="c-logo-part">
-		<!--c-logo-part-start-->
-		<div class="container">
-			<ul>
-				<li><a href="#"><img src="img/c-liogo1.png" alt=""></a></li>
-				<li><a href="#"><img src="img/c-liogo2.png" alt=""></a></li>
-				<li><a href="#"><img src="img/c-liogo3.png" alt=""></a></li>
-				<li><a href="#"><img src="img/c-liogo4.png" alt=""></a></li>
-				<li><a href="#"><img src="img/c-liogo5.png" alt=""></a></li>
-			</ul>
-		</div>
-	</div>
-	<!--c-logo-part-end-->
 
 
 
@@ -154,7 +136,6 @@
 	
 	<footer class="footer">
 		<div class="container">
-			<div class="footer-logo"><a href="#"><img src="img/footer-logo.png" alt=""></a></div>
 			<span class="copyright">&copy; Knight Theme. All Rights Reserved</span>
 			<div class="credits">
 				<!--
@@ -167,6 +148,13 @@
 			</div>
 		</div>
 	</footer>
+
+	<script>
+			function navToNext() {
+				location.href = "file:///Users/meghancasey/Desktop/CSWork/PennApps/FoodBracket/src/app/bracket/bracket.page.html";
+				// location.replace("file:///Users/meghancasey/Desktop/CSWork/PennApps/FoodBracket/src/app/bracket/bracket.page.html");
+			}
+	</script>
 
 	<script type="text/javascript">
 		$(document).ready(function(e) {

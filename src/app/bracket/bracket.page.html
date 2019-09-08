@@ -9,25 +9,24 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <link href="src/app/css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="src/app/css/style.css" rel="stylesheet" type="text/css">
-        <link href="src/app/css/font-awesome.css" rel="stylesheet" type="text/css">
-        <link href="src/app/css/responsive.css" rel="stylesheet" type="text/css">
-        <link href="src/app/css/magnific-popup.css" rel="stylesheet" type="text/css">
-        <link href="src/app/css/animate.css" rel="stylesheet" type="text/css">
+        <link href="/src/app/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="/src/app/css/style.css" rel="stylesheet" type="text/css">
+        <link href="/src/app/css/font-awesome.css" rel="stylesheet" type="text/css">
+        <link href="/src/app/css/responsive.css" rel="stylesheet" type="text/css">
+        <link href="/src/app/css/magnific-popup.css" rel="stylesheet" type="text/css">
+        <link href="/src/app/css/animate.css" rel="stylesheet" type="text/css">
 
         <link href="app/entryform/entry.form.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="src/app/entryform/entry.form.js"></script>
+        <script type="text/javascript" src="/src/app/entryform/entry.form.js"></script>
 
-        <script type="text/javascript" src="src/app/js/jquery.1.8.3.min.js"></script>
-        <script type="text/javascript" src="src/app/js/bootstrap.js"></script>
-        <script type="text/javascript" src="src/app/js/jquery-scrolltofixed.js"></script>
-        <script type="text/javascript" src="src/app/js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="src/app/js/jquery.isotope.js"></script>
-        <script type="text/javascript" src="src/app/js/wow.js"></script>
-        <script type="text/javascript" src="src/app/js/classie.js"></script>
-        <script type="text/javascript" src="src/app/js/magnific-popup.js"></script>
-        <script src="src/app/contactform/contactform.js"></script>
+        <script type="text/javascript" src="/src/app/js/jquery.1.8.3.min.js"></script>
+        <script type="text/javascript" src="/src/app/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/src/app/js/jquery-scrolltofixed.js"></script>
+        <script type="text/javascript" src="/src/app/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="/src/app/js/jquery.isotope.js"></script>
+        <script type="text/javascript" src="/src/app/js/wow.js"></script>
+        <script type="text/javascript" src="/src/app/js/classie.js"></script>
+        <script type="text/javascript" src="/src/app/js/magnific-popup.js"></script>
 
         <!-- =======================================================
     Theme Name: Knight
@@ -39,40 +38,53 @@
         <link href="bracket.page.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="bracket.page.js"></script> 
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVLzXVT1vBPMgHF-x3MOXQlMJiVlryDj8&libraries=places"></script>
+        <style>
+            header {
+                background-color: #F8FFE5;
+                color: #FFC43D;
+                border-bottom: solid 10px #FFC43D;
+
+            }
+            /* footer {
+                background-color: #FFC43D;
+                color: #F8FFE5;
+
+                width: 100%;
+                text-align: center;
+                position: fixed;
+                bottom: 0;
+                overflow: hidden;
+            } */
+        </style>
     </head>
     <body>
-                    <header class="header" id="header">
-                        <!--header-start-->
-                        <div class="container">
-                            <figure class="logo animated fadeInDown delay-07s">
-                                <a href="#"><img src="src/app/img/IMG_1160.jpeg" alt=""></a>
-                            </figure>
-                            <h1 class="animated fadeInDown delay-07s">Welcome To Munch Madness</h1>
-                            <ul class="we-create animated fadeInUp delay-1s">
-                                <li>Taking the stress out of deciding where to eat</li>
-                            </ul>
-                            <a class="link animated fadeInUp delay-1s servicelink" href="#serviceOpen">Let's Eat</a>
-                        </div>
-                    </header>
-                    <!--header-end-->
-       
-    <footer class="footer">
+        <header>
+            <!--header-start-->
             <div class="container">
-                <div class="footer-logo"><a href="#"><img src="img/footer-logo.png" alt=""></a></div>
+                <h1 class="animated fadeInDown delay-07s">Welcome To Munch Madness</h1>
+            </div>
+        </header>
+                    <!--header-end-->
+    <!-- <section id="bracketHolder"></section>
+    <section id="boxHolder"></section> -->
+
+    <!-- <footer class="footer">
+            <div class="container">
                 <span class="copyright">&copy; Knight Theme. All Rights Reserved</span>
                 <div class="credits">
-                    <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Knight
-            -->
+                  
                     Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
                 </div>
             </div>
-        </footer>
-    
-        <script type="text/javascript">
+    </footer> -->
+    <script>
+			function navToNext() {
+                location.href = "file:///Users/meghancasey/Desktop/CSWork/PennApps/FoodBracket/src/app/winnerpage/winner.page.html";
+
+				// location.replace("file:///Users/meghancasey/Desktop/CSWork/PennApps/FoodBracket/src/app/bracket/bracket.page.html");
+			}
+	</script>
+        <!-- <script type="text/javascript">
             $(document).ready(function(e) {
     
                 $('#test').scrollToFixed();
@@ -165,7 +177,7 @@
                 });
     
             });
-        </script>
+        </script> -->
     </body>
     
     </html>
