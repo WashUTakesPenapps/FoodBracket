@@ -17,7 +17,7 @@ window.onload = function() {
      
         function callback(place, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
-                storedPlaces.push(place);
+                storedPlaces[j] = place;
             }
         }
     }
@@ -233,42 +233,9 @@ function priceConverter(price){
     // var storedResults = JSON.parse(localStorage.getItem("results"));
     // console.log(storedResults);
 
-<<<<<<< HEAD
-window.onload = function() {
-    var storedIds = new Array(8);
-    var storedPlaces = new Array();
-    var service = null;
-    var i = 0;
-
-    for (var j = 0; j < 8; j++) {
-        storedIds[j] = localStorage.getItem(j);
-        console.log(storedIds[j]);
-
-        var request = {
-            placeId: storedIds[j],
-            fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity', 'photos']
-        };
-
-        service = new google.maps.places.PlacesService(document.createElement('div'));
-        service.getDetails(request, callback);
-
-        function callback(place, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                storedPlaces[i] = place;
-                
-                console.log(storedPlaces[i]);
-                i += 1;
-            }
-        }
-    }
-
-    console.log(storedPlaces[i-1]);
-}
-=======
     // //name, photo, rating, price, radius
 
     // var photoSearch = new XMLHttpRequest();
     // photoSearch.open('GET', 'https://maps.googleapis.com/maps/api/place/photo?maxWidth=' + maxWidth + '&photoreference=' + photoId 
     // + '&key=' + apiKey);
 
->>>>>>> f5404650b93e82adf599f1627e33d5814a92f236
