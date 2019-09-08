@@ -8,6 +8,7 @@
 	<title>Bracket Bananza</title>
 
     <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
@@ -171,6 +172,22 @@
                     <a id="rightButton" class="link animated fadeInUp delay-1s servicelink" href="#service">Yes!</a>
             </div>
         </section>
+        <div class="wrapper">
+                <div class="profile">
+                   <table id= "userdata">
+                  <thead>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Address</th>
+                            <th>Cuisine</th>
+                        </thead>
+                      <tbody>
+                
+                       </tbody>
+                   </table>
+                
+                </div>
+                </div>
 	
 	<!--header-end-->
 
@@ -306,6 +323,24 @@
         w3.displayObject("id01", rightObject);
         w3.displayObject("id02", leftObject);
     </script>
+    <script>
+
+            $(function() {
+        
+        
+           var restaurants = [];
+        
+           $.getJSON('restaurants.json', function(data) {
+               $.each(data.results, function(i, f) {
+                  var tblRow = "<tr>" + "<td>" + f.name + "</td>" +
+                   "<td>" + f.cuisine + "</td>" + "<td>" + f.price + "</td>" + "<td>" + f.address + "</td>" + "</tr>"
+                   $(tblRow).appendTo("#userdata tbody");
+             });
+        
+           });
+        
+        });
+        </script>
 </body>
 
 </html>
