@@ -933,3 +933,70 @@ border: 2px solid #fff;
 .bracket {
 	background-color: #F8FFE5;
 }
+
+.split {
+	height: 50%;
+	width: 50%;
+	position: fixed;
+	top: 50%;
+	overflow-x: hidden;
+	padding-top: 20px;
+	float: left;
+
+}
+.image {
+	height: 50%;
+	width:50%;
+	position:fixed;
+	top: 0;
+	/* overflow-y: hidden;
+	overflow-x: hidden; */
+	background-size: cover;
+}
+.left{
+	background-color: #06D6A0;
+	left:0;
+	float: left;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+
+.right {
+	background-color: #ef476f;
+	right:0;
+	float: right;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+#bracketFoot {
+	float: left;
+	width: 100%;
+	padding: 5px 0px;
+	float: all;
+}
+.left ul li {
+	color:#ef476f;
+}
+#rightButton {
+	background:#06D6A0;
+}
+
+#rightButton:hover {
+	text-decoration:none;
+	color:#ef476f !important;
+	background:#fff;
+}
+
+/* #rightButton:active, #rightButton:focus {
+	background: #ef476f;
+	text-decoration:none;
+	color:#fff !important;
+} */

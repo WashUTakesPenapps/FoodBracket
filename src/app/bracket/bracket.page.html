@@ -1,176 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Bracket Bananza</title>
-        <meta charset="UTF-8">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-        <script src="bracket.page.js"></script>
-        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <link href="/src/app/css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="/src/app/css/style.css" rel="stylesheet" type="text/css">
-        <link href="/src/app/css/font-awesome.css" rel="stylesheet" type="text/css">
-        <link href="/src/app/css/responsive.css" rel="stylesheet" type="text/css">
-        <link href="/src/app/css/magnific-popup.css" rel="stylesheet" type="text/css">
-        <link href="/src/app/css/animate.css" rel="stylesheet" type="text/css">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
 
-        <link href="app/entryform/entry.form.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="/src/app/entryform/entry.form.js"></script>
+	<title>Bracket Bananza</title>
 
-        <script type="text/javascript" src="/src/app/js/jquery.1.8.3.min.js"></script>
-        <script type="text/javascript" src="/src/app/js/bootstrap.js"></script>
-        <script type="text/javascript" src="/src/app/js/jquery-scrolltofixed.js"></script>
-        <script type="text/javascript" src="/src/app/js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="/src/app/js/jquery.isotope.js"></script>
-        <script type="text/javascript" src="/src/app/js/wow.js"></script>
-        <script type="text/javascript" src="/src/app/js/classie.js"></script>
-        <script type="text/javascript" src="/src/app/js/magnific-popup.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<link href="../css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="../css/responsive.css" rel="stylesheet" type="text/css">
+	<link href="../css/magnific-popup.css" rel="stylesheet" type="text/css">
+	<link href="../css/animate.css" rel="stylesheet" type="text/css">
 
-        <!-- =======================================================
+	<link href="../entryform/entry.form.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../entryform/entry.form.js"></script>
+
+	<script type="text/javascript" src="../js/jquery.1.8.3.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+	<script type="text/javascript" src="../js/jquery-scrolltofixed.js"></script>
+	<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="../js/jquery.isotope.js"></script>
+	<script type="text/javascript" src="../js/wow.js"></script>
+	<script type="text/javascript" src="../js/classie.js"></script>
+	<script type="text/javascript" src="../js/magnific-popup.js"></script>
+
+	<!-- =======================================================
     Theme Name: Knight
     Theme URL: https://bootstrapmade.com/knight-free-bootstrap-theme/
     Author: BootstrapMade
     Author URL: https://bootstrapmade.com
 	======================================================= -->
 
-        <link href="bracket.page.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="bracket.page.js"></script> 
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVLzXVT1vBPMgHF-x3MOXQlMJiVlryDj8&libraries=places"></script>
-        <style>
-            header {
-                background-color: #F8FFE5;
-                color: #FFC43D;
-                border-bottom: solid 10px #FFC43D;
+</head>
 
-            }
-
-        </style>
-    </head>
-    <body>
-        <header>
-            <!--header-start-->
-            <div class="container">
-                <h1 class="animated fadeInDown delay-07s">Welcome To Munch Madness</h1>
+<body>
+    <section class = "split left">
+        <div class = "left image">
+            <img src="../img/breakfast-from-above.jpg">
+        </div>
+            <div id="id02" class="centered">
+                    <h1 class="animated fadeInDown delay-07s">{{name}}</h1>
+                    <ul class="we-create animated fadeInUp delay-1s">
+                            <li><i class = "fa fa-star"></i> {{rating}}</li><br>
+                            <li><i class = "fa fa-map-marker"></i> Address</li><br>
+                            <li><i class="fa fa-cutlery"></i> {{cuisine}}</li><br>
+                            <li><i class="fa fa-usd"></i> {{price}}</li>
+                    </ul>
+                    <a class="link animated fadeInUp delay-1s servicelink" href="#service">Yes!</a>
             </div>
-        </header>
-                    <!--header-end-->
-    <!-- <section id="bracketHolder"></section>
-    <section id="boxHolder"></section> -->
-
-    <!-- <footer class="footer">
-            <div class="container">
-                <span class="copyright">&copy; Knight Theme. All Rights Reserved</span>
-                <div class="credits">
-                  
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
+        </section>
+    <section class ="split right">
+            <div class = "right image">
+                <img src="../img/pasta.jpg">
             </div>
-    </footer> -->
-    <script>
-			function navToNext() {
-                location.href = "file:///Users/meghancasey/Desktop/CSWork/PennApps/FoodBracket/src/app/winnerpage/winner.page.html";
+            <div id="id01" class="centered">
+                    <h1 class="animated fadeInDown delay-07s">{{name}}</h1>
+                    <ul class="we-create animated fadeInUp delay-1s">
+                        <li><i class = "fa fa-star"></i> {{rating}}</li><br>
+                        <li><i class = "fa fa-map-marker"></i> Address</li><br>
+                        <li><i class="fa fa-cutlery"></i> <span>{{cuisine}}</span></li><br>
+                        <li><i class="fa fa-usd"></i> {{price}}</li>
+                    </ul>
+                    <a id="rightButton" class="link animated fadeInUp delay-1s servicelink" href="#service">Yes!</a>
+            </div>
+        </section>
+	
+	<!--header-end-->
 
-				// location.replace("file:///Users/meghancasey/Desktop/CSWork/PennApps/FoodBracket/src/app/bracket/bracket.page.html");
-			}
+
+
+
+
+	<footer class="footer" id = "bracketFoot">
+		<div class="container">
+			<span class="copyright">&copy; Knight Theme. All Rights Reserved</span>
+			<div class="credits">
+				<!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Knight
+        -->
+				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<script type="text/javascript">
+		$(document).ready(function(e) {
+
+			$('#test').scrollToFixed();
+			$('.res-nav_click').click(function() {
+				$('.main-nav').slideToggle();
+				return false
+
+			});
+
+      $('.Portfolio-box').magnificPopup({
+        delegate: 'a',
+        type: 'image'
+      });
+
+		});
 	</script>
-        <!-- <script type="text/javascript">
-            $(document).ready(function(e) {
+
+	<script>
+		wow = new WOW({
+			animateClass: 'animated',
+			offset: 100
+		});
+		wow.init();
+	</script>
+
+
+	<script type="text/javascript">
+		$(window).load(function() {
+
+			$('.main-nav li a, .servicelink').bind('click', function(event) {
+				var $anchor = $(this);
+
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top - 102
+				}, 1500, 'easeInOutExpo');
+				/*
+				if you don't want to use the easing effects:
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top
+				}, 1000);
+				*/
+				if ($(window).width() < 768) {
+					$('.main-nav').hide();
+				}
+				event.preventDefault();
+			});
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(window).load(function() {
+
+
+			var $container = $('.portfolioContainer'),
+				$body = $('body'),
+				colW = 375,
+				columns = null;
+
+
+			$container.isotope({
+				// disable window resizing
+				resizable: true,
+				masonry: {
+					columnWidth: colW
+				}
+			});
+
+			$(window).smartresize(function() {
+				// check if columns has changed
+				var currentColumns = Math.floor(($body.width() - 30) / colW);
+				if (currentColumns !== columns) {
+					// set new column count
+					columns = currentColumns;
+					// apply width to container manually, then trigger relayout
+					$container.width(columns * colW)
+						.isotope('reLayout');
+				}
+
+			}).smartresize(); // trigger resize to set container width
+			$('.portfolioFilter a').click(function() {
+				$('.portfolioFilter .current').removeClass('current');
+				$(this).addClass('current');
+
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
+
+					filter: selector,
+				});
+				return false;
+			});
+
+		});
+    </script>
     
-                $('#test').scrollToFixed();
-                $('.res-nav_click').click(function() {
-                    $('.main-nav').slideToggle();
-                    return false
-    
-                });
-    
-          $('.Portfolio-box').magnificPopup({
-            delegate: 'a',
-            type: 'image'
-          });
-    
-            });
-        </script>
-    
-        <script>
-            wow = new WOW({
-                animateClass: 'animated',
-                offset: 100
-            });
-            wow.init();
-        </script>
-    
-    
-        <script type="text/javascript">
-            $(window).load(function() {
-    
-                $('.main-nav li a, .servicelink').bind('click', function(event) {
-                    var $anchor = $(this);
-    
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top - 102
-                    }, 1500, 'easeInOutExpo');
-                    /*
-                    if you don't want to use the easing effects:
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1000);
-                    */
-                    if ($(window).width() < 768) {
-                        $('.main-nav').hide();
-                    }
-                    event.preventDefault();
-                });
-            })
-        </script>
-    
-        <script type="text/javascript">
-            $(window).load(function() {
-    
-    
-                var $container = $('.portfolioContainer'),
-                    $body = $('body'),
-                    colW = 375,
-                    columns = null;
-    
-    
-                $container.isotope({
-                    // disable window resizing
-                    resizable: true,
-                    masonry: {
-                        columnWidth: colW
-                    }
-                });
-    
-                $(window).smartresize(function() {
-                    // check if columns has changed
-                    var currentColumns = Math.floor(($body.width() - 30) / colW);
-                    if (currentColumns !== columns) {
-                        // set new column count
-                        columns = currentColumns;
-                        // apply width to container manually, then trigger relayout
-                        $container.width(columns * colW)
-                            .isotope('reLayout');
-                    }
-    
-                }).smartresize(); // trigger resize to set container width
-                $('.portfolioFilter a').click(function() {
-                    $('.portfolioFilter .current').removeClass('current');
-                    $(this).addClass('current');
-    
-                    var selector = $(this).attr('data-filter');
-                    $container.isotope({
-    
-                        filter: selector,
-                    });
-                    return false;
-                });
-    
-            });
-        </script> -->
-    </body>
-    
-    </html>
-    
+    <script>
+        var rightObject = {
+            "name" : "Blaze Pizzeria", 
+            "price" : 2,
+            "cuisine": "Italian",
+            "rating":4
+        };
+        var leftObject = {
+            "name" : "Chipotle", 
+            "price" : 1,
+            "cuisine": "Mexican",
+            "rating":4
+        };
+        w3.displayObject("id01", rightObject);
+        w3.displayObject("id02", leftObject);
+    </script>
+</body>
+
 </html>
