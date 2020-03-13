@@ -1,6 +1,5 @@
 var storedPlaces = new Array(8);
 
-
 window.onload = function() {
     var storedIds = new Array(8);
     var service;
@@ -13,16 +12,6 @@ window.onload = function() {
             placeId: storedIds[j],
             fields: ['name', 'rating', 'formatted_address', 'website', 'price_level', 'opening_hours', 'place_id', 'vicinity']
         };
-            
-        service = new google.maps.places.PlacesService(document.createElement('div'));
-        service.getDetails(request, callback);
-    }
-
-    function callback(place, status) {
-        console.log("in callback function");
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            console.log(place);
-        }
     }
 }
 
